@@ -11,6 +11,7 @@ CDAP_ENDPOINT=http://localhost:11011/api
 curl -X GET "${CDAP_ENDPOINT}/v3/export/apps" -o app.zip
 unzip app.zip 
 rm app.zip
+cd default
 ```
 ## restore the pipeline
 
