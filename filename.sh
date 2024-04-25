@@ -29,10 +29,10 @@ for FILE in "$DIR"/*.json; do
   # Deploy the application using curl
   curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/${NAMESPACE}/apps/${APP_NAME}" -d "@${FILE}" > /dev/null
 
-  # Print the result of the deployment
+  # Print "Deployed" if the deployment succeeded
   if [ $? -eq 0 ]; then
-    echo "Deployment of ${APP_NAME} succeeded."
+    echo "Deployed: ${APP_NAME}"
   else
-    echo "Deployment of ${APP_NAME} failed."
+    echo "Error: Failed to deploy ${APP_NAME}"
   fi
 done
