@@ -35,8 +35,6 @@ curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 
 ```sh
 chmod +x filename.sh
-```
-```sh
 ./filename.sh
 ```
 
