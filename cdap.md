@@ -1,4 +1,4 @@
-RUN CDAP AKA Cloud Data Fusion SANDBOX
+# RUN CDAP AKA Cloud Data Fusion SANDBOX
 
 ```sh
 docker run -it -p 11015:11015 -p 11011:11011 --name cdap-sandbox caskdata/cdap-sandbox:6.7.3 cdap sandbox start --enable-debug --foreground
