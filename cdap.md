@@ -65,6 +65,26 @@ if we want only some pipeline then use below
 curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/rizal_santoso/cdap/default/pipepline-3.json"
 ```
 
+
+### Upgrade pipelines by following these steps:
+upgdrading pipeline is for get the latest plugin version installed on new CDAP version for get better performance
+
+1. Create a variable that points to the pipeline_upgrade.json file that you will create in the next step to save a list of pipelines.
+   ```sh
+   export PIPELINE_LIST=${PWD}/default/pipeline_upgrade.json
+   ```
+2. Create a list of all pipelines for an instance and namespace using the following command. The result is stored in the $PIPELINE_LIST file in JSON format. You can edit the list to remove pipelines that don't need upgrades.
+   ```sh
+   curl -H "Content-Type: application/json" ${CDAP_ENDPOINT}/v3/namespaces/default/apps -o $PIPELINE_LIST
+   ```
+3. Upgrade the pipelines listed in pipeline_upgrade.json. Insert the NAMESPACE_ID of pipelines to be upgraded. The command displays a list of upgraded pipelines with their upgrade status.
+   ```sh
+   curl -N -H "Content-Type: application/json" ${CDAP_ENDPOINT}/v3/namespaces/default/upgrade --data @$PIPELINE_LIST
+   ```
+
+
+
+
 ### reference
 https://cloud.google.com/data-fusion/docs/how-to/upgrading
 https://cdap.atlassian.net/wiki/spaces/DOCS/pages/480379010/Installing+the+CDAP+Sandbox+Docker+Image
