@@ -10,3 +10,23 @@ CDAP_ENDPOINT=http://localhost:11011/api
 curl -X GET "${CDAP_ENDPOINT}/v3/export/apps" -o app.zip
 unzip app.zip 
 rm app.zip
+
+# restore the pipeline
+
+simulate lost pipeline
+
+### check lsit of apps
+
+curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
+
+### delete pipeline
+
+curl -X DELETE "${CDAP_ENDPOINT}/v3/namespaces/default/apps"
+
+### check lsit of apps
+
+curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
+
+### deploy pipeline
+
+curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/rizal_santoso/cdap/default/pipepline-3.json"
