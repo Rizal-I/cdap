@@ -67,7 +67,7 @@ curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/
 
 
 ### Upgrade pipelines by following these steps:
-upgdrading pipeline is for get the latest plugin version installed on new CDAP version for get better performance
+upgdrading pipeline is for use the latest plugin version installed on new CDAP version for get better performance
 
 1. Create a variable that points to the pipeline_upgrade.json file that you will create in the next step to save a list of pipelines.
    ```sh
