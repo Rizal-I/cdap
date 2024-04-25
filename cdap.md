@@ -6,3 +6,5 @@ docker run -it -p 11015:11015 -p 11011:11011 --name cdap-sandbox caskdata/cdap-s
 CDAP_ENDPOINT=http://localhost:11011/api
 
 curl -X GET "${CDAP_ENDPOINT}/v3/export/apps" -o app.zip
+unzip app.zip 
+rm app.zip
