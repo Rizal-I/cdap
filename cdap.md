@@ -22,6 +22,7 @@ web preview change 8080 to port 11011
 ### deploy multiple json pipeline via REST API
 
 ```sh
+CDAP_ENDPOINT=http://localhost:11011/api
 chmod +x filename.sh
 ./filename.sh
 ```
@@ -29,7 +30,6 @@ chmod +x filename.sh
 ## get the pipeline
 
 ```sh
-CDAP_ENDPOINT=http://localhost:11011/api
 curl -X GET "${CDAP_ENDPOINT}/v3/export/apps" -o app.zip
 unzip app.zip 
 rm app.zip
