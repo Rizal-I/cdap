@@ -35,6 +35,8 @@ unzip app.zip
 rm app.zip
 cd default
 ```
+select replace for All
+
 
 ## simulate lost pipeline
 
