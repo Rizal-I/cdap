@@ -62,7 +62,7 @@ if we want only some pipeline then use below
 ### deploy single json
 
 ```sh
-curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/rizal_santoso/cdap/default/pipepline-3.json"
+curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@${PWD}/default/pipepline-3.json"
 ```
 
 
