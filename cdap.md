@@ -27,8 +27,14 @@ curl -X DELETE "${CDAP_ENDPOINT}/v3/namespaces/default/apps"
 
 curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 
-### deploy pipeline
+### deploy multiple json pipeline
+
+chmod +x filename.sh
+./filename.sh
+
+
+### deploy every single json
 
 curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/rizal_santoso/cdap/default/pipepline-3.json"
 
-https://cloud.google.com/data-fusion/docs/how-to/upgrading 
+https://cloud.google.com/data-fusion/docs/how-to/upgrading
