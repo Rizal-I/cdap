@@ -88,3 +88,4 @@ upgdrading pipeline is for use the latest plugin version installed on new CDAP v
 ### reference
 https://cloud.google.com/data-fusion/docs/how-to/upgrading
 https://cdap.atlassian.net/wiki/spaces/DOCS/pages/480379010/Installing+the+CDAP+Sandbox+Docker+Image
+https://cloud.google.com/data-fusion/docs/troubleshoot
