@@ -7,7 +7,7 @@ CDAP_ENDPOINT="http://localhost:11011/api"
 NAMESPACE="default"
 
 # Define the directory containing the JSON files
-DIR="/home/rizal_santoso/cdap/default"
+DIR="${pwd}/default"
 
 # Loop through each JSON file in the directory
 for FILE in "$DIR"/*.json; do
