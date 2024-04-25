@@ -15,7 +15,7 @@ rm app.zip
 
 simulate lost pipeline
 
-### check lsit of apps
+### check list of apps
 
 curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 
@@ -23,10 +23,12 @@ curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 
 curl -X DELETE "${CDAP_ENDPOINT}/v3/namespaces/default/apps"
 
-### check lsit of apps
+### check list of apps
 
 curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 
 ### deploy pipeline
 
 curl -X PUT "${CDAP_ENDPOINT}/v3/namespaces/default/apps/pipeline-3" -d "@/home/rizal_santoso/cdap/default/pipepline-3.json"
+
+https://cloud.google.com/data-fusion/docs/how-to/upgrading 
