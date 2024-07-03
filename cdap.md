@@ -58,6 +58,41 @@ curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 ## restore the pipeline
 we can use deploy multiple json pipeline
 
+sh```
+#!/bin/bash
+
+# Define the CDAP endpoint
+CDAP_ENDPOINT="https://test-instance-data-platform-dev-landing-dot-ase2.datafusion.googleusercontent.com"
+
+# Define the namespace
+NAMESPACE="default"
+
+# Define the directory containing JSON pipeline files
+PIPELINE_DIR="${PWD}/default"
+
+# Obtain the access token
+ACCESS_TOKEN=$(gcloud auth application-default print-access-token)
+
+# Loop through each JSON file in the directory
+for pipeline_file in "$PIPELINE_DIR"/*.json; do
+  # Extract the base name of the file (without path and extension)
+  pipeline_name=$(basename "$pipeline_file" .json)
+  
+  # Deploy the pipeline
+  curl -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+       -X PUT "${CDAP_ENDPOINT}/api/v3/namespaces/${NAMESPACE}/apps/${pipeline_name}" \
+       -d "@${pipeline_file}"
+
+  # Check the exit status of the curl command
+  if [ $? -ne 0 ]; then
+    echo "Failed to deploy pipeline: ${pipeline_name}"
+  else
+    echo "Successfully deployed pipeline: ${pipeline_name}"
+  fi
+done
+
+```
+
 if we want only some pipeline then use below
 ### deploy single json
 
