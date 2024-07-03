@@ -58,7 +58,7 @@ curl -X GET "${CDAP_ENDPOINT}/v3/namespaces/default/apps" | jq .
 ## restore the pipeline
 we can use deploy multiple json pipeline
 
-sh```
+```sh
 #!/bin/bash
 
 # Define the CDAP endpoint
